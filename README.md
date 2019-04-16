@@ -19,6 +19,15 @@ Make a function that takes in a string and a number, adds an 's' to that string 
 #### Task
 Make a function that takes in an int, then simulate flipping coins until the number of heads in a row is equal to the input number. Each flip, print heads or tails as appropriate, when finished, print out how many flips it took to get the requisite consecutive heads.
 
-#### Tasks
+#### Tests
 [x] 2
 [4] 4
+
+
+### Command Line Clock
+
+#### Task
+Make a function that displays the current time in the terminal, when the time to display changes, print it again. Continue until a break command is issued by the user.
+
+#### Tests
+[x] Run

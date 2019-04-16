@@ -1,3 +1,7 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+
 public class Main{
   public static void main(String[] args){
     System.out.println("Pluralize tests");
@@ -11,7 +15,7 @@ public class Main{
     int turtleCount = 0;
     System.out.println("I have " + turtleCount + pluralize(" turtle", turtleCount) +".");
 
-    System.out.println("\n\nCoin Flip Tests");
+    System.out.println("\n\nCoin Flip tests");
   
     System.out.println("\nTest 1: 2 heads in a row");
     flipNHeads(2);
@@ -19,7 +23,8 @@ public class Main{
     System.out.println("\nTest 1: 4 heads in a row");
     flipNHeads(4);
 
-
+    System.out.println("\n\nClock test:")
+    displayClock();
   }
 
   public static String pluralize(String word, int count){
@@ -43,4 +48,21 @@ public class Main{
     }
     System.out.println("It took " + flips + " flips to flip " + targetHeads + " heads in a row.");
   }
+
+  public static void displayClock(){
+    LocalDateTime time = LocalDateTime.now();
+
+    String currentTime = time.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+    while(true){
+      time = LocalDateTime.now();
+      String testTime = time.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+      if(!testTime.equals(currentTime)){
+        System.out.println(currentTime);
+        currentTime = testTime;
+      }
+    }
+
+  }
+
+
 }
