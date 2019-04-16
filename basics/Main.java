@@ -53,13 +53,32 @@ public class Main{
     LocalDateTime time = LocalDateTime.now();
 
     String currentTime = time.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+    int runCount = 0;
+
     while(true){
+      float kilo = 1_000;
+      float mega = 1_000_000;
+      float giga = 1_000_000_000;
       time = LocalDateTime.now();
       String testTime = time.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
       if(!testTime.equals(currentTime)){
-        System.out.println(currentTime);
+        String clockSpeed = " ";
+        
+        if(runCount < kilo){
+          clockSpeed += runCount + "Hz";
+        }else if(runCount < mega){
+          clockSpeed += ((float)runCount / kilo) + "KHz";
+        } else if(runCount < giga) {
+          clockSpeed += ((float)runCount / mega) + "MHz";
+        } else {
+          clockSpeed += ((float)runCount / giga) + "GHz";
+        }
+
+        System.out.println(currentTime + clockSpeed);
         currentTime = testTime;
+        runCount = 0;
       }
+      runCount++;
     }
 
   }
