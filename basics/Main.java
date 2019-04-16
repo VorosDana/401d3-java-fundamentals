@@ -23,7 +23,7 @@ public class Main{
     System.out.println("\nTest 1: 4 heads in a row");
     flipNHeads(4);
 
-    System.out.println("\n\nClock test:")
+    System.out.println("\n\nClock test:");
     displayClock();
   }
 
